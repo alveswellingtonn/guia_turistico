@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671762148969",
+    "project_id": "guia-turistico-cb9b0",
+    "storage_bucket": "guia-turistico-cb9b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671762148969:android:505fa86de01a2650cafcf8",
+        "android_client_info": {
+          "package_name": "com.example.guia_turistico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671762148969-mko4or834f41p9c4mfm08mhicdad4mue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIRwQkpN2rgyTRTFzxsR5MdKnPA4R844E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671762148969-mko4or834f41p9c4mfm08mhicdad4mue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
