@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:guia_turistico/Tile/drawer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:guia_turistico/datas/product_data.dart';
 import 'package:guia_turistico/screens/Locais.dart';
 
 class Home extends StatelessWidget {
 
   //final _pageController = PageController();
+
 
   @override
   Widget build(BuildContext context) {

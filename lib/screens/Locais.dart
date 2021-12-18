@@ -5,16 +5,19 @@ import 'package:guia_turistico/datas/product_data.dart';
 import 'package:guia_turistico/screens/Detalhe_Local.dart';
 
 class Locais extends StatelessWidget {
+  //Locais(DocumentSnapshot doc);
 
   final DocumentSnapshot snapshot;
+  //final ProductData product;
 
-  Locais(this.snapshot);
+  Locais( this.snapshot);
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(snapshot.data["title"]),
+        title: Text(snapshot.documentID),
         centerTitle: true,
       ),
       body: FutureBuilder<QuerySnapshot>(
@@ -35,7 +38,7 @@ class Locais extends StatelessWidget {
                 return InkWell(
                   onTap: (){
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context)=>DetalheLocal())
+                      MaterialPageRoute(builder: (context)=>DetalheLocal(data))
                     );
                   },
                   child: Card(
