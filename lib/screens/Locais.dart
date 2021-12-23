@@ -17,7 +17,7 @@ class Locais extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(snapshot.documentID),
+        title: Text(snapshot.documentID.toUpperCase()),
         centerTitle: true,
       ),
       body: FutureBuilder<QuerySnapshot>(

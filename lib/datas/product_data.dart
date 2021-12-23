@@ -9,6 +9,13 @@ class ProductData {
   String endereco;
   String telefone;
 
+  double lat;
+  double long;
+  //String local;
+  //String localizacao;
+  //String phone;
+  //String funcionamento;
+
   String sobre;
 
   List images;
@@ -22,5 +29,11 @@ class ProductData {
     sobre = snapshot.data["sobre"];
     images = snapshot.data["images"];
     horario = snapshot.data["horario"];
+    lat = snapshot.data["lat"];
+    long = snapshot.data["long"];
+    //local = snapshot.data["local"];
+    //localizacao = snapshot.data["localizacao"];
+    //phone = snapshot.data["phone"];
+    //funcionamento = snapshot.data["funcionamento"];
   }
 }
