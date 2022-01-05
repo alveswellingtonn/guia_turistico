@@ -38,13 +38,13 @@ class _DetalheLocalState extends State<DetalheLocal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(product.title.toUpperCase()),
+        title: Text(product.title),
         centerTitle: true,
       ),
       body: ListView(
         children: <Widget>[
           AspectRatio(
-            aspectRatio: 0.9,
+            aspectRatio: MediaQuery.of(context).size.aspectRatio * 2,
             child: Carousel(
               images: product.images.map((url){
                 return NetworkImage(url);
@@ -110,8 +110,16 @@ class _DetalheLocalState extends State<DetalheLocal> {
                       },
                       child: Column(
                         children: <Widget>[
-                          Image.asset("assets/telefone.png",width: 60,),
-                          Text("Telefone")
+                          Icon(Icons.phone_in_talk_rounded,
+                            size: 55.0,
+                            color: temaPadrao.primaryColor,
+                          ),
+                          SizedBox(height: 5.0,),
+                          Text("Telefone",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -122,8 +130,16 @@ class _DetalheLocalState extends State<DetalheLocal> {
                       },
                       child: Column(
                         children: <Widget>[
-                          Image.asset("assets/gps.png",width: 60,),
-                          Text("Mapa")
+                          Icon(Icons.location_on,
+                            size: 55.0,
+                            color: temaPadrao.primaryColor,
+                          ),
+                          SizedBox(height: 5.0,),
+                          Text("Mapa",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                            ),
+                          )
                         ],
                       ),
                     ),
