@@ -1,13 +1,27 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:guia_turistico/Tile/drawer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:guia_turistico/datas/product_data.dart';
+import 'package:guia_turistico/main.dart';
+import 'package:guia_turistico/screens/Fale_Conosco.dart';
 import 'package:guia_turistico/screens/Locais.dart';
+import 'package:guia_turistico/screens/Sobre_App.dart';
 
 class Home extends StatelessWidget {
 
   //final _pageController = PageController();
 
+  Widget _buildDraweryBack() => Container(
+    decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [
+              Color(0xFF64B5F6),
+              Colors.grey[200]
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter
+        )
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +30,83 @@ class Home extends StatelessWidget {
        title: Text("Guia Turístico"),
        centerTitle: true,
      ),
-     //drawer: CustomDrawer(_pageController),
+     drawer: Drawer(
+       child: Stack(
+         children: <Widget>[
+           _buildDraweryBack(),
+           ListView(
+             children: <Widget>[
+               DrawerHeader(
+                 padding: EdgeInsets.only(top: 20.0, left: 20.0),
+                 child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: <Widget>[
+                     Text("Caieiras Tour",
+                       style: TextStyle(
+                           fontSize: 34.0, fontWeight: FontWeight.bold
+                       ),
+                     ),
+                     SizedBox(height: 20.0,),
+                     Text("Olá, Sejam bem-vindos!",
+                       style: TextStyle(
+                         fontSize: 18.0, fontWeight: FontWeight.bold
+                       ),
+                     )
+                   ],
+                 ),
+               ),
+               ListTile(
+                 leading: Icon(
+                   Icons.contact_support_sharp,
+                   size: 32.0,
+                   color: Colors.grey[700],
+                 ),
+                 title: Text("Fale Conosco",
+                   style: TextStyle(
+                     fontSize: 18.0,
+                     color: Colors.black
+                   ),
+                 ),
+                 onTap: (){
+                   Navigator.of(context).push(
+                       MaterialPageRoute(builder: (context)=>FaleConosco())
+                   );
+                 },
+               ),
+               ListTile(
+                 leading: Icon(
+                   Icons.info_sharp,
+                   size: 32.0,
+                   color: Colors.grey[700],
+                 ),
+                 title: Text("Sobre o App",
+                   style: TextStyle(
+                       fontSize: 18.0,
+                       color: Colors.black
+                   ),
+                 ),
+                 onTap: (){
+                   Navigator.of(context).push(
+                       MaterialPageRoute(builder: (context)=>SobreApp())
+                   );
+                 },
+               )
+             ],
+           )
+         ],
+       )
+     ),
      body: Container(
        child: FutureBuilder<QuerySnapshot>(
          future: Firestore.instance.collection("guia").getDocuments(),
          builder: (context, snapshot) {
            if(!snapshot.hasData)
            return Center(
-             child: CircularProgressIndicator(),
+             child: CircularProgressIndicator(
+               color: temaPadrao.primaryColor,
+               backgroundColor: temaPadrao.accentColor,
+               strokeWidth: 5.0,
+             ),
            );
            else {
              var dividedTiles = ListTile.divideTiles(
@@ -52,7 +135,7 @@ class Home extends StatelessWidget {
          }
        ),
      ),
-      //backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.grey[200],
     );
   }
 }
