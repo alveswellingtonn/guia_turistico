@@ -1,5 +1,4 @@
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:guia_turistico/datas/product_data.dart';
 import 'package:guia_turistico/main.dart';
@@ -21,19 +20,6 @@ class _DetalheLocalState extends State<DetalheLocal> {
 
   _DetalheLocalState (this.product);
 
-  /*abrirMap()async{
-    const url ="https://www.google.com/maps/place/"
-        "Mirante+do+Cristo+de+Caieiras/@-23.3471872"
-        ",-46.7562364,14.58z/data=!4m5!3m4!"
-        "1s0x94cee35c66fb3b75:0x715a1209b618288!8m2!3d-23."
-        "3539925!4d-46.7646759";
-      if(await canLaunch(url)){
-      await launch(url);
-    } else {
-      throw "Erro ao abrir o Mapa";
-    }
-  }*/
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,11 +35,12 @@ class _DetalheLocalState extends State<DetalheLocal> {
               images: product.images.map((url){
                 return NetworkImage(url);
               }).toList(),
-              dotSize: 5.0,
-              dotSpacing: 15.0,
+              dotSize: 7.0,
+              dotSpacing: 20.0,
               dotBgColor: Colors.transparent,
-              dotColor: temaPadrao.primaryColor,
+              dotColor: Colors.white,
               autoplay: false,
+              dotIncreasedColor: temaPadrao.primaryColor,
             ),
           ),
           Padding(
@@ -145,19 +132,12 @@ class _DetalheLocalState extends State<DetalheLocal> {
                     ),
                   ],
                 ),
-                /*ListView(
-                  padding: EdgeInsets.symmetric(vertical: 4.0),
-                  children: product.horario.map((h){
-                    return Container(
-                      child: Text(h),
-                    );
-                  }).toList(),
-                )*/
               ],
             ),
           ),
         ],
       ),
+      backgroundColor: Colors.grey[200],
     );
   }
 }
