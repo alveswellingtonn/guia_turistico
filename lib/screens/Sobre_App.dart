@@ -9,20 +9,27 @@ class SobreApp extends StatelessWidget {
         title: Text("Sobre o app"),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(15.0),
-            height: 350.0,
-            width: 250,
-            child: Image.asset("assets/gps.png"),
+          AspectRatio(
+            aspectRatio: MediaQuery.of(context).size.aspectRatio * 2,
+            child: Container(
+              padding: EdgeInsets.all(6.0),
+              height: 300.0,
+              width: 200,
+              child: Image.asset("assets/icon.png"),
+            ),
           ),
           Container(
-            padding: EdgeInsets.all(15.0),
-            child: Text("O guia Caieiras Tour surgiu com o propósito de reunir o"
-                " maior número possível de informações justamente para facilitar"
-                " os turistas e além disso divulgar os potenciais e futuros "
-                "comércios da região."),
+            padding: EdgeInsets.all(18.0),
+            child: Text("O guia Caieiras Tour surgiu com o propósito de reunir o "
+                "maior número possível de informações justamente para facilitar "
+                "os turistas e além disso divulgar os potenciais e futuros "
+                "comércios da região.",
+              style: TextStyle(
+                fontSize: 17.0,
+              ),
+            ),
           )
         ],
       ),

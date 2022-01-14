@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      appBar: AppBar(
-       title: Text("Guia Turístico"),
+       title: Text("Caieiras Tour"),
        centerTitle: true,
      ),
      drawer: Drawer(
@@ -43,13 +43,15 @@ class Home extends StatelessWidget {
                    children: <Widget>[
                      Text("Caieiras Tour",
                        style: TextStyle(
-                           fontSize: 34.0, fontWeight: FontWeight.bold
+                           fontSize: 34.0, fontWeight: FontWeight.bold,
+                         color: Colors.black
                        ),
                      ),
                      SizedBox(height: 20.0,),
                      Text("Olá, Sejam bem-vindos!",
                        style: TextStyle(
-                         fontSize: 18.0, fontWeight: FontWeight.bold
+                         fontSize: 18.0, fontWeight: FontWeight.bold,
+                         color: Colors.grey[800]
                        ),
                      )
                    ],
@@ -59,12 +61,12 @@ class Home extends StatelessWidget {
                  leading: Icon(
                    Icons.contact_support_sharp,
                    size: 32.0,
-                   color: Colors.grey[700],
+                   color: Colors.black,
                  ),
                  title: Text("Fale Conosco",
                    style: TextStyle(
                      fontSize: 18.0,
-                     color: Colors.black
+                     color: Colors.grey[800]
                    ),
                  ),
                  onTap: (){
@@ -77,12 +79,12 @@ class Home extends StatelessWidget {
                  leading: Icon(
                    Icons.info_sharp,
                    size: 32.0,
-                   color: Colors.grey[700],
+                   color: Colors.black,
                  ),
                  title: Text("Sobre o App",
                    style: TextStyle(
                        fontSize: 18.0,
-                       color: Colors.black
+                       color: Colors.grey[800]
                    ),
                  ),
                  onTap: (){

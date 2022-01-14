@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:guia_turistico/main.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FaleConosco extends StatelessWidget {
 
@@ -11,36 +12,63 @@ class FaleConosco extends StatelessWidget {
         title: Text("Fale Conosco"),
         centerTitle: true,
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                     Text("wellingtonn.941021@gmail.com"),
-                     Icon(Icons.email_sharp),
+                     Text(
+                       "caieirastours@gmail.com",
+                       style: TextStyle(
+                         fontSize: 16.0,
+                       ),
+                     ),
+                     Icon(
+                       Icons.email_sharp,
+                       size: 29.0,
+                       color: Colors.orange[500],
+                     ),
                 ],
               ),
             ),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("Telefone: (11) 97552-6178"),
-                  Icon(Icons.local_phone),
+                  Text(
+                    "Telefone: (11) 97552-6178",
+                    style: TextStyle(
+                      fontSize: 16.0
+                    ),
+                  ),
+                  Icon(
+                      Icons.local_phone,
+                    size: 30.0,
+                    color: Colors.green[600],
+                  ),
                 ],
               ),
             ),
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text("R: José Dias de Moraes, V. Pinheiros, Caieiras - SP"),
-                  Icon(Icons.location_on_sharp),
+                  Text(
+                    "R: José Dias de Moraes, Caieiras",
+                    style: TextStyle(
+                      fontSize: 16.0
+                    ),
+                  ),
+                  Icon(
+                      Icons.location_on_sharp,
+                    size: 30.0,
+                    color: Colors.red[600],
+                  ),
                 ],
               ),
             ),
@@ -50,18 +78,25 @@ class FaleConosco extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text("O guia Caieiras Tour está sempre sujeito as "
-                      "atualizções, caso o estabelecimento ou o local não "
-                      "esteja cadastrado no guia é só informar!"),
+                      "atualizações, caso a empresa ou o local turístico não "
+                      "esteja cadastrado no guia Caieiras Tour, é só realizar "
+                      "o cadastro, que o mais breve possível estará atualizado no aplicativo",
+                    style: TextStyle(
+                      fontSize: 16.0
+                    ),
+                  ),
                   SizedBox(height: 12.0,),
-                  Text("Para informar e cadastrar no guia é só clicar no botão abaixo!"),
+                  Text("Para informar e cadastrar no guia Caieiras Tour é só "
+                      "clicar no botão abaixo e prencher o formulário.",
+                    style: TextStyle(
+                      fontSize: 16.0, fontWeight: FontWeight.bold
+                    ),
+                  ),
                   SizedBox(height: 36.0,),
-                  Positioned(
-                    left: 16,
-                      right: 16,
-                    bottom: 16,
+                  Container(
                     child: GestureDetector(
                       child: Container(
-                        child: Text("Realizar cadastro",
+                        child: Text("Realizar Cadastro",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20
@@ -74,7 +109,11 @@ class FaleConosco extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)
                         ),
                       ),
-                      onTap: (){},
+                      onTap: (){
+                        launch("https://docs.google.com/forms/d/e/"
+                            "1FAIpQLSeJr5N-Z5ib2k8U7gLt5z56NpJBcHgyTPWu1FZk1KaIQC7-Xw/"
+                            "viewform?usp=sf_link");
+                      },
                     ),
                   )
                 ],
