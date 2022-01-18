@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guia_turistico/screens/Splash_Screen.dart';
 
 import 'screens/Home.dart';
 
@@ -11,7 +12,7 @@ void main() {
   runApp(MaterialApp(
     title: "Guia Turistico",
     debugShowCheckedModeBanner: false,
-    home: Home(),
+    home: SplashScreen(),
     theme: temaPadrao,
   ));
 }
