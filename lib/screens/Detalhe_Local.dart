@@ -97,11 +97,18 @@ class _DetalheLocalState extends State<DetalheLocal> {
                       },
                       child: Column(
                         children: <Widget>[
-                          Icon(Icons.phone_in_talk_rounded,
-                            size: 55.0,
-                            color: temaPadrao.primaryColor,
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF0D47A1),
+                            radius: 35.0,
+                            child: Icon(
+                              Icons.phone_in_talk_rounded,
+                              color: Colors.white,
+                              size: 50,
+                            ),
                           ),
-                          SizedBox(height: 5.0,),
+                          Padding(
+                            padding: EdgeInsets.only(top:10.0),
+                          ),
                           Text("Telefone",
                             style: TextStyle(
                               fontSize: 16.0,
@@ -117,18 +124,24 @@ class _DetalheLocalState extends State<DetalheLocal> {
                       },
                       child: Column(
                         children: <Widget>[
-                          Icon(Icons.location_on,
-                            size: 55.0,
-                            color: temaPadrao.primaryColor,
-                          ),
-                          SizedBox(height: 5.0,),
-                          Text("Mapa",
-                            style: TextStyle(
-                              fontSize: 16.0,
+                          CircleAvatar(
+                            backgroundColor: Color(0xFF0D47A1),
+                            radius: 35.0,
+                            child: Icon(
+                              Icons.location_on,
+                              color: Colors.white,
+                              size: 50,
                             ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top:10.0),
+                          ),
+                          Text("Mapa",
+                            style: TextStyle(fontSize: 16.0),
                           )
                         ],
-                      ),
+                      )
+
                     ),
                   ],
                 ),
