@@ -12,7 +12,7 @@ void main() {
   runApp(MaterialApp(
     title: "Guia Turistico",
     debugShowCheckedModeBanner: false,
-    home: SplashScreen(),
+    home: Home(),
     theme: temaPadrao,
   ));
 }
